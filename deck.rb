@@ -8,11 +8,21 @@ class Deck
     @cards = []
     @face = %w{2 3 4 5 6 7 8 9 10 J Q K A}
     @suits = %w{Spades Hearts Diamonds Clubs}
+suits.each do |s|
+  face.length.times do |f|
+    cards << Card.new(f, s)
+    end
   end
 
+  cards.shuffle!
+  end
 
-suits.each do |suit| face.size.times do |sort| @cards << Card.new( face[sort], suit, sort+1 )
-end
-end
+  def draw
+    cards.shift
+  end
+
+  def empty?
+    cards.empty?
+  end
 
 end

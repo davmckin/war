@@ -1,12 +1,32 @@
 class Card
 
-  attr_accessor :value, :suit, :face
+  attr_accessor  :suit, :face, :value
 
-  def initialize(suit, value, face)
+  def initialize(suit, face)
     @suit = suit
-    @value = value
-    @face = face
+    @face = face.to_s
+    @value = find_value
+  end
+
+  def find_value
 
   end
+
+  def >(other)
+    value > other.value
+  end
+
+  def <(other)
+    value < other.value
+  end
+
+  def ==(other)
+    if other.is_a? Card
+      value == other.value
+    else
+      super(other)
+    end
+  end
+
 
 end
