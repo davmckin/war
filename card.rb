@@ -1,5 +1,14 @@
 class Card
 
+def self.faces
+  ("2".."10").to_a + %w(J Q K A)
+end
+
+def self.suits
+  %w{Spades Hearts Diamonds Clubs}
+end
+
+
   attr_accessor  :suit, :face, :value
 
   def initialize(suit, face)
@@ -9,7 +18,7 @@ class Card
   end
 
   def find_value
-
+    self.class.faces.index(face)
   end
 
   def >(other)

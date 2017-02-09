@@ -1,11 +1,11 @@
-require_relative ' deck'
+require_relative 'deck'
 
 
 class Game
 
   attr_accessor :player, :opponent, :p_win, :o_wins, :rounds, :ties
 
-  def initialize()
+  def initialize
     @player = Deck.new
     @opponent = Deck.new
     @p_wins = []
@@ -16,7 +16,7 @@ class Game
 
   def player
     until player.empty?
-hand
+      hand
     end
     game_over
   end

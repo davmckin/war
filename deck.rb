@@ -6,15 +6,12 @@ class Deck
 
   def initialize
     @cards = []
-    @face = %w{2 3 4 5 6 7 8 9 10 J Q K A}
-    @suits = %w{Spades Hearts Diamonds Clubs}
-suits.each do |s|
-  face.length.times do |f|
+Card.suits.each do |s|
+  Card.faces.length.each do |f|
     cards << Card.new(f, s)
     end
   end
-
-  cards.shuffle!
+  shuffle
   end
 
   def draw
@@ -23,6 +20,10 @@ suits.each do |s|
 
   def empty?
     cards.empty?
+  end
+
+  def shuffle
+    cards.shuffle!
   end
 
 end

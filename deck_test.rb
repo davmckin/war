@@ -12,13 +12,9 @@ class DeckTest < MiniTest::Test
 
   def test_deck_contains_13_of_each_suit
 
-  end
+  end 
 
   def test_deck_contains_four_of_each_face_card
-
-  end
-
-  def test_deck_deck_shuffles_on_creation
 
   end
 
@@ -36,7 +32,7 @@ class DeckTest < MiniTest::Test
   end
 
   def test_if_deck_is_empty
-    deck - Deck.new
+    deck = Deck.new
     52.times { deck.draw}
     assert deck.empty?
   end
