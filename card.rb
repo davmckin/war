@@ -5,7 +5,7 @@ class Card
   def initialize(suit, value, face)
     @suit = suit
     @value = value
-    @face = 
+    @face = face
 
   end
 
