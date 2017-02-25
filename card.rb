@@ -8,7 +8,6 @@ def self.suits
   %w{Spades Hearts Diamonds Clubs}
 end
 
-
   attr_accessor  :suit, :face, :value
 
   def initialize(suit, face)

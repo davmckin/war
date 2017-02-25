@@ -14,8 +14,8 @@ class Game
     @ties = 0
   end
 
-  def player
-    until player.empty?
+  def play
+    until @player.empty?
       hand
     end
     game_over
@@ -57,5 +57,5 @@ class Game
       end
   end
 
-
 end
+Game.new.play

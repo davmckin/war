@@ -7,7 +7,7 @@ class Deck
   def initialize
     @cards = []
 Card.suits.each do |s|
-  Card.faces.length.each do |f|
+  Card.faces.each do |f|
     cards << Card.new(f, s)
     end
   end
