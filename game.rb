@@ -1,13 +1,13 @@
 require_relative 'deck'
-
+require 'tty'
 
 class Game
 
   attr_accessor :player, :opponent, :p_win, :o_wins, :rounds, :ties
 
   def initialize
-    @player = Deck.new
-    @opponent = Deck.new
+    @player = [] << Deck.new
+    @opponent = [] << Deck.new
     @p_wins = []
     @o_wins = []
     @rounds = 0

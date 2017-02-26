@@ -1,5 +1,7 @@
 class Card
 
+include Comparable
+
 def self.faces
   ("2".."10").to_a + %w(J Q K A)
 end
@@ -17,24 +19,29 @@ end
   end
 
   def find_value
-    self.class.faces.index(face)
+    case
+    when face.to_i != 0 then face.to_i
+    when face == "J" then 11
+    when face == "Q" then 12
+    when face == "K" then 13
+    else 14
+    end
   end
 
-  def >(other)
-    value > other.value
+  def +(other)
+        value + other.value
   end
 
-  def <(other)
-    value < other.value
-  end
-
-  def ==(other)
+  def <=>(other)
     if other.is_a? Card
-      value == other.value
+      value <=> other.value
     else
       super(other)
     end
   end
 
+  def to_s
+    "a #{face} of #{suit}"
+  end
 
 end

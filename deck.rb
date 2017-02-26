@@ -6,24 +6,28 @@ class Deck
 
   def initialize
     @cards = []
-Card.suits.each do |s|
-  Card.faces.each do |f|
-    cards << Card.new(f, s)
-    end
+    build_deck
+    shuffle
   end
-  shuffle
+
+  def build_deck
+    Card.suits.each do |s|
+      Card.faces.each do |f|
+        cards << Card.new(s, f)
+      end
+    end
   end
 
   def draw
-    cards.shift
+    @cards.shift
   end
 
   def empty?
-    cards.empty?
+    @cards.empty?
   end
 
   def shuffle
-    cards.shuffle!
+    @cards.shuffle!
   end
 
 end
